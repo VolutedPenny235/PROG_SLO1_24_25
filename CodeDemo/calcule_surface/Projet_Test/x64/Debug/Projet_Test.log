@@ -1,0 +1,10 @@
+﻿  fonctions.c
+C:\LFO\TEST\Projet_Test\Projet_Test\fonctions.c(15,5): warning C4013: 'scanf_s' non défini(e) ; extern retournant int pris par défaut
+C:\LFO\TEST\Projet_Test\Projet_Test\fonctions.c(16,15): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\LFO\TEST\Projet_Test\Projet_Test\fonctions.c(23,24): warning C4244: '=' : conversion de 'unsigned int' en 'float', perte possible de données
+C:\LFO\TEST\Projet_Test\Projet_Test\fonctions.c(30,35): warning C4244: '=' : conversion de 'unsigned int' en 'float', perte possible de données
+C:\LFO\TEST\Projet_Test\Projet_Test\fonctions.c(37,20): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+  main.c
+C:\LFO\TEST\Projet_Test\Projet_Test\main.c(29,13): warning C4013: 'strcmp' non défini(e) ; extern retournant int pris par défaut
+  Génération de code en cours...
+  Projet_Test.vcxproj -> C:\LFO\TEST\Projet_Test\x64\Debug\Projet_Test.exe
