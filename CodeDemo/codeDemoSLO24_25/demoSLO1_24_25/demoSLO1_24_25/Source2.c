@@ -153,6 +153,21 @@ int slo(void)
     a = (char)127;
     a = a << 4;
 
+    //-- post incérmentationn 
+    a = 10; 
+    b = 1;
+
+    c = a + b++;            
+
+    d = a + (b++); 
+
+    a = 10;
+    b = 1;
+
+    c = a + ++b;
+
+
+
     // si a faut 0 => paranthèse retourne 0 
     // si a différent de 0 => parenthèse retourne 1
     if (a) {}
@@ -203,6 +218,23 @@ int slo(void)
 
     }
 
+
+
+    switch (a)
+    {
+        case 10 : 
+        case 100 : 
+            // instruction à la valeur 10 
+
+            break; 
+
+        case 1000 : 
+            // instrcution  lié au cas 100 
+
+        default : 
+            break; 
+
+    }
 
 
   return(0);

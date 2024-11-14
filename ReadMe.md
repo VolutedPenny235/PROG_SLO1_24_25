@@ -1,15 +1,14 @@
 # PROG - Cours de programmation année 2024 - 2025
 ## Infos Pratique - Bonne pratique git
-
-1. Créer un compte sur un serveur GIT => pour l'ES nous utiliserons <span sytle="color: #FF0000">Github</span>
+###Créer un compte sur un serveur GIT => pour l'ES nous utiliserons <span sytle="color: #FF0000">Github</span>
 	
-=> **deux approches possible** <= 
 * => vous créez et gérez votre **propre dépôt** (local -> serveur)
 	
 	A. => sur votre machine (local) -> créez un **répertoire vide** où vous voulez
 	```
 	// exemple sous windows 
-	c:\mesDossierGit\monDepot 
+	C:
+	> mkdir c:\mesDossierGit\monDepot 
 	```
 	B. => sur votre serveur Git, créer un dépôt (new repository) 
 	
@@ -27,7 +26,8 @@
 	E. => pour mettre à jour votre dépôt distant -> placez-vous dans votre répertoire de travail local 
 	```
 	// exemple sous windows - répertoire de travail  
-	c:\mesDossierGit\monDepot 
+	C:
+	> cd c:\mesDossierGit\monDepot 
 	```
 	* => 3 commandes à connaitre 
 	
@@ -46,12 +46,13 @@
 	B.  => sur votre machine (local) -> créez un **répertoire vide** où vous voulez 
 	```
 	// exemple sous windows 
-	c:\mesDossierGit\monDepot 
+	C:
+	> mkdir c:\mesDossierGit\monDepot 
 	```
 	
 	C. => associez votre dépot (serveur) -> à votre dépôt local (machine) 
 	```
-	git clone <adresse serveur> 
+	git clone https://github.com/nomUserGit/votreNomDepotGit.git 
 	``` 
 
 *=> avec un outil graphqiue* -> sourceTree pour l'ES - GitDescktop - TortoiseGit - etc. 
