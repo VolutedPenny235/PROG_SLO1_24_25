@@ -2,11 +2,11 @@
 // Projet Name 			: demoSLO1_24_25
 // File Name 			: demoSLO.c
 // Creation Date 		: 19.09.2024
-// Modification Date	: 10.10.2024
+// Modification Date	: 21.11.2024
 //
 // Author 				: Philou (Ph. Bovey)
 //
-// Version				: 0.1
+// Version				: 0.2
 //
 // Description          : demo pour les slos 1 
 //						  1) calculer différentes surfaces 
@@ -29,6 +29,8 @@
 //-- appel de headerfile  -> vos fichier headerfile 
 #include "fonctionsSLO.h"
 
+
+
 //-- prototypes - WARNING à évité ici 
 
 
@@ -37,6 +39,25 @@
 
 //-- enumération globale --//
 enum e_choixSurface { carre, rectangle = 6, triangle, cercle }; // 0 - 6 - 7 - 8
+enum e_couleurCarrosserie { blanc, noir, rouge, bleu };
+
+
+
+struct str_moteur 
+{
+	short piston; 
+	double cylindre; 
+	float turbo; 
+};
+
+// déclaration structure 
+struct str_voiture
+{
+	int roue;
+	enum e_couleurCarrosserie carroserie;
+	char tb_modele[TAILLE_TB];
+	str_moteurV2 moteur;
+}; 
 
 
 //-- déclaration de fonction 
@@ -57,7 +78,74 @@ void main()
 
 	e_surfaceChoice choixUser2;		//-- lié au typedef du headerFile; 
 
-	int longueur_m = 100, largeur_m = 10, rayon = 1; 
+	int longueur_m = 100, largeur_m = 10, rayon = 1, index, indexe, valTb = 0; 
+	int valeurX = 100, valeurY = 10; 
+
+
+	// -- ATTENTION : Opérateur & => cela indique la notion d'adresse 
+
+
+	fonctionDemopt(valeurX, &valeurY); 
+
+
+	//-- déclaration tableau --// 
+	short tbSurface[6]; //  = { 0, 0, 0, 0, 0, 0 };
+
+	// short tbSurface2[1000] = { 0 }; 
+
+	char tbMulti[2][3] = { 0 }; 
+
+
+	// utilisation structure 
+	struct str_voiture voiture1, voiture2 = { 3, blanc, "bat", {12, 6, 1} }; 
+	str_moteurV2 moteurBNJ = { 6, 3, 0 }; 
+
+	voiture1 = voiture2; 
+
+	voiture1.roue = 4;
+	voiture1.moteur = moteurBNJ; 
+
+
+
+
+	//-- version 1 
+	for (index = 0; index < TAILLE_TB; index++)
+	{
+		if (index == 0)
+			tbSurface[index] = 0; // écriture 
+		else 
+			tbSurface[index] = tbSurface[index - 1] + 2; // écriture et lecture 
+	}
+
+	//-- version KGR
+	for (index = 0; index < TAILLE_TB; index++)
+	{
+		tbSurface[index] = valTb;
+		valTb = valTb + 2;
+	}
+
+	//-- version BSH
+	for (index = 0; index < TAILLE_TB; index++)
+	{
+		tbSurface[index] = index * 2; 
+	}
+
+	//-- version LCX 
+	for (index = 0; index < TAILLE_TB; index++)
+	{
+		tbSurface[index] = index << 2;
+	}
+
+	//char tbMulti[2][3] = { 0 }; 
+	// case = 1,2,3,4,5,6
+	for (index = 0; index < TAILLE_LG ; index++)//boucle de Ligne
+	{
+		for (indexe = 0; indexe < TAILLE_CL; indexe++)//boucle de collone
+		{
+			tbMulti[index][indexe] = (index * 3) + indexe + 1;
+		}
+	}
+
 
 	//-- type reel 
 	float surfaceCarre_m2, surfaceRectangle_m2, surfaceTriangle_m2, surfaceCercle_m2; 
@@ -82,6 +170,8 @@ void main()
 	//-- appel de fonction 
 	slo(); 
 
+	//appel de fonctio
+	choixUser2 = DemonstrationSlo1(longueur_m, largeur_m, (double)surfaceCarre_m2);
 
 
  
